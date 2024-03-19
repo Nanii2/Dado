@@ -15,7 +15,7 @@ public class BotonAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ReproducirAudio();
     }
 
     public void ReproducirAudio()
@@ -25,7 +25,7 @@ public class BotonAudio : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            Debug.DrawRay(ray.origin, ray.direction, Color.red, 4);
+            //Debug.DrawRay(ray.origin, ray.direction, Color.blue, 4);
 
             RaycastHit infoRayo;
 
@@ -34,7 +34,7 @@ public class BotonAudio : MonoBehaviour
                 if (infoRayo.collider == GetComponent<Collider>())
                 {
                     AudioSource.PlayClipAtPoint(audioClip, transform.position);
-
+                    //Debug.Log("reproduciendo audio");
                 }
 
 
